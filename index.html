@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		url = window.location.search;
+		url = url.substring(url.lastIndexOf('?') + 1, url.length);
+			alert(url);
+
+		window.onload = function () {
+            var list = "site.json"
+            var request = new XMLHttpRequest();
+            request.open("get", list);
+            request.send(null);
+            request.onload = function () {
+                if (request.status == 200) {
+                    var json = JSON.parse(request.responseText);
+                    console.log(json[url]);
+                    if (json[url]!=undefined) {
+                    	window.parent.location.href=json[url];
+                    }
+                    /*console.log(url);
+                    for (var i = 0;i < json.length; i++) {
+                    	if (json[i].name==url) {
+                    		console.log("ok");
+                    	}
+                    }*/
+                }
+            }
+        }
+	</script>
+</head>
+<body>
+	RUN
+</body>
+</html>
