@@ -1,6 +1,6 @@
 <script type="text/javascript">
 		url = window.location.pathname;
-		url = url.substring(url.lastIndexOf('/') + 1, url.length);
+		url = url.substring(url.lastIndexOf('/')+1, url.length);
 
 		window.onload = function () {
             var list = "site.json"
@@ -16,6 +16,7 @@
                     }
                 }
             }
+            window.parent.location.href=window.parent.location.origin;
         }
 </script>
 <a href="https://github.com/ifnor/TurnToSite"><img alt="构建状态" src="https://ceshon.coding.net/badges/android/job/587614/build.svg"></a>
