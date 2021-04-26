@@ -49,7 +49,7 @@
                     	var box = document.createElement('div');
                     	var href = document.createElement('a');
                     	var li = document.createElement('div');
-                    	href.href=json[event.value];
+                    	href.href=window.parent.location.href+event.value;
                     	li.id="list";
                     	href.innerText="该短链对应："+json[event.value];
                     	show.appendChild(li);
