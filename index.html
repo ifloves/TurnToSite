@@ -55,28 +55,38 @@
             request.send(null);
             request.onload = function () {
                 if (request.status == 200) {
-                    var json = JSON.parse(request.responseText);
+                    let json = JSON.parse(request.responseText);
                     if (json[event.value]!=undefined) {
                     	// window.parent.location.href=json[url];
                     	console.log("ok");
                     	document.getElementById('hide').style.display = "none";
-                    	var box = document.createElement('div');
-                    	var href = document.createElement('a');
-                    	var li = document.createElement('div');
+                    	let box = document.createElement('div');
+                    	let href = document.createElement('a');
+                    	let li = document.createElement('div');
                     	href.href=window.parent.location.href+event.value;
                     	li.id="list";
                     	href.innerText="该短链对应："+json[event.value];
                     	show.appendChild(li);
                     	li.appendChild(href);
                     }else if (event.value.length==0) {
-                    	document.getElementById('hide').style.display = "none";
-                    	var list = document.getElementById('list');
-                    	show.removeChild(list);
+                    	// document.getElementById('hide').style.display = "none";
+                    	let hide = document.getElementById('hide');
+                    	hide?show.removeChild(hide):'';
+                    	let list = document.getElementById('list');
+                    	list?show.removeChild(list):'';
 
                     }else{
-                    	document.getElementById('hide').style.display = "block";
-                    	var list = document.getElementById('list');
-                    	show.removeChild(list);
+                    	// document.getElementById('hide').style.display = "block";
+                    	let hide = document.getElementById('hide');
+                    	hide?show.removeChild(hide):'';
+                    	let box = document.createElement('div');
+                    	let p = document.createElement('p');
+                    	box.id="hide";
+                    	p.innerText="该短链没有对应内容，可以提交。";
+                    	show.appendChild(box);
+                    	box.appendChild(p);
+                    	let list = document.getElementById('list');
+                    	list?show.removeChild(list):'';
                     }
                 }
             }
@@ -165,14 +175,7 @@
 			<div>
 				<input type="text" id="input" oninput="ind(this)"  onporpertychange="ind(this)" name="" placeholder="input...">
 			</div>
-			<div class="show" id="show">
-				<!-- <div>sdasdjabsjda</div>
-				<div>sdasdjabsjda</div> -->
-				<div id="hide" display='none' hidden="hidden">
-					<p>该短链没有对应内容，可以提交。</p>
-				</div>
-			</div>
-			
+			<div class="show" id="show"></div>
 		</div>
 	</div>
 </body>
