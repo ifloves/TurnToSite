@@ -1,10 +1,3 @@
 {
-	
-	"baidu":"https://www.baidu.com",
-	"qq":"https://www.qq.com/",
-	"android":"https://ceshon.coding.net/public/android/Android/git/files",
-	"blog":"https://ifdo.ml",
-	"androidpackages":"https://ceshon.coding.net/public-artifacts/android/android/packages",
-	"SaveDownloadObject":"https://api.ifto.ml/Save&Download%20Object/",
-	"JavaPractice-suet":"https://ceshon.coding.net/s/16b115d1-f4a9-42a6-8dd3-f575b4fb8545"
+	"Image-WeChat":"./src/WeChat.jpg"
 }
